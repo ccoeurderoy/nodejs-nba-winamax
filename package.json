@@ -11,7 +11,7 @@
     "precommit": "lint-staged",
     "pretest": "npm run lint && npm run build",
     "prettier": "prettier --write '{src,test}/**/*.ts'",
-    "semantic-release": "semantic-release",
+    "start": "ts-node src/index.ts",
     "test": "mocha"
   },
   "files": [
@@ -56,6 +56,9 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/inquirer": "^6.5.0",
+    "@types/lodash": "^4.14.149",
+    "@types/pino": "^5.17.0",
     "@yelloan/tslint": "^0.3.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.1.0",
@@ -66,5 +69,12 @@
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "inquirer": "^7.0.6",
+    "lodash": "^4.17.15",
+    "nba": "^4.13.0",
+    "pino": "^5.17.0",
+    "pino-pretty": "^3.6.1"
   }
 }
