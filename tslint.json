@@ -2,5 +2,10 @@
   "extends": [
     "@yelloan/tslint/tslint-config",
     "tslint-config-prettier"
-  ]
+  ],
+  "rules": {
+    "no-require-imports": false,
+    "no-unsafe-any": false,
+    "no-var-requires": false
+  }
 }

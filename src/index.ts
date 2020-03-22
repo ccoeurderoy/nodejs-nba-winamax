@@ -1,9 +1,9 @@
-import * as inquirer from 'inquirer';
 import * as _ from 'lodash';
 import * as Pino from 'pino';
 
-import { askForAPlayer, chooseAPlayer } from './lib/inquirer';
-import { getPlayerStats, Player, searchPlayers } from './lib/nba';
+import { askForADate, chooseAGame, getListOfPlayers } from './core/inquirer';
+import { getLatestGames } from './core/nba';
+import { getPlayerScore } from './core/winamax';
 
 const logger: Pino.Logger = Pino({
   prettyPrint: {
@@ -16,48 +16,35 @@ const logger: Pino.Logger = Pino({
  */
 async function main(): Promise<void> {
   /**
-   * Look for a player
-   * Try again if no player has been found
+   * Ask for a date to look for games
    */
-  let players: Player[] = [];
-
-  while (_.isEmpty(players)) {
-    const { playerToLookFor } = await askForAPlayer();
-    const result: Player[] = await searchPlayers(playerToLookFor);
-    players = players.concat(result);
-
-    if (_.isEmpty(players)) {
-      logger.info('No player found, please try again');
-      continue;
-    }
-  }
+  const { dateToLookFor } = await askForADate();
 
   /**
-   * Choose a player
+   * Find latest games
    */
-  let player: Player = players[0];
-
-  if (players.length > 1) {
-    const { chosenPlayer } = await chooseAPlayer(players);
-    player = chosenPlayer;
-  }
-
-  console.log(await getPlayerStats(player.playerId));
+  const { scoreBoard, gameDate } = await getLatestGames(dateToLookFor);
 
   /**
-   * Select a game
+   * List games and ask the user to find one
    */
+  const { chosenGameId } = await chooseAGame(scoreBoard, gameDate);
 
   /**
-   * Select a player
+   * Get a list of player sorted by point made
    */
+  const { player } = await getListOfPlayers(chosenGameId);
 
   /**
-   * Return his Winamax score
+   * Calculate Winamax scores
    */
+  const winamaxPlayerScore: number = getPlayerScore(player);
+
+  logger.info(`${player.PLAYER_NAME} has a score of ${winamaxPlayerScore.toFixed(2)} points!`);
+  process.exit(0);
 }
 
-main().catch((err: unknown): void => {
-  logger.error('An error occurred when running the main script', err);
+main().catch((err: Error): void => {
+  logger.error(err, 'An error occurred when running the main script');
   process.exit(1);
 });

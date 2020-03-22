@@ -2,8 +2,8 @@
   "name": "nba-winamax",
   "version": "0.0.1",
   "description": "Little script converting NBA stats into Winamax points",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
     "commit": "git-cz",
@@ -12,14 +12,17 @@
     "pretest": "npm run lint && npm run build",
     "prettier": "prettier --write '{src,test}/**/*.ts'",
     "start": "ts-node src/index.ts",
-    "test": "mocha"
+    "start:oldschool": "npm run build && node dist/index.js"
   },
   "files": [
     "dist/src"
   ],
   "keywords": [
     "node",
-    "typescript"
+    "typescript",
+    "nba",
+    "winamax",
+    "inquirer"
   ],
   "author": "ccoeurderoy",
   "license": "ISC",
@@ -27,21 +30,6 @@
     "{src,test}/**/*.ts": [
       "prettier --list-different \"{src,test}/**/*.ts\""
     ]
-  },
-  "nyc": {
-    "check-coverage": true,
-    "per-file": true,
-    "lines": 100,
-    "statements": 100,
-    "functions": 100,
-    "branches": 100,
-    "cache": false,
-    "extension": [
-      ".ts"
-    ]
-  },
-  "publishConfig": {
-    "access": "restricted"
   },
   "config": {
     "commitizen": {
@@ -72,7 +60,9 @@
   },
   "dependencies": {
     "inquirer": "^7.0.6",
+    "inquirer-datepicker-prompt": "^0.4.2",
     "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "nba": "^4.13.0",
     "pino": "^5.17.0",
     "pino-pretty": "^3.6.1"
