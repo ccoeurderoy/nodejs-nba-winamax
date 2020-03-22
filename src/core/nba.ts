@@ -12,9 +12,7 @@ import { BoxScore, GameHeader, ParsedPlayerStats, ResultSet, ScoreBoard, Team } 
  */
 export async function getLatestGames(date?: string): Promise<{ scoreBoard: ScoreBoard; gameDate: string }> {
   const dateFormat: string = 'MM/DD/YYYY';
-  let gameDate: string = moment(date)
-    .format(dateFormat)
-    .toString();
+  let gameDate: string = moment(date).format(dateFormat).toString();
 
   let randomFinalGame: GameHeader | undefined;
   let scoreBoard: ScoreBoard | undefined;
@@ -29,10 +27,7 @@ export async function getLatestGames(date?: string): Promise<{ scoreBoard: Score
     });
 
     if (randomFinalGame === undefined) {
-      gameDate = moment(gameDate, dateFormat)
-        .subtract(1, 'day')
-        .format(dateFormat)
-        .toString();
+      gameDate = moment(gameDate, dateFormat).subtract(1, 'day').format(dateFormat).toString();
     }
   } while (randomFinalGame === undefined);
 
