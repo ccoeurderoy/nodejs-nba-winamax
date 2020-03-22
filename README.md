@@ -1,6 +1,6 @@
 # NodeJS NBA Winamax score calculator
 
-A little prompt asking you to select a game and a user to calculate Winamax score.
+A little prompt asking you to select a game and a user to calculate [Winamax](https://www.winamax.fr/jde) score.
 
 ## Getting Started
 
