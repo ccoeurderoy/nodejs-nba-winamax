@@ -8,7 +8,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need to install [NodeJS](https://nodejs.org/en/download/) on your local machine.
+You need to install [NodeJS](https://nodejs.org/en/download/) on your local machine and clone this repository running:
+
+```bash
+git clone https://github.com/ccoeurderoy/nodejs-nba-winamax.git
+```
 
 ### Installing
 
