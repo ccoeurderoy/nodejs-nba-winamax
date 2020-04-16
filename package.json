@@ -48,7 +48,7 @@
     "@types/lodash": "^4.14.149",
     "@types/pino": "^6.0.0",
     "@yelloan/tslint": "^0.3.0",
-    "commitizen": "^4.0.3",
+    "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^3.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.3",
