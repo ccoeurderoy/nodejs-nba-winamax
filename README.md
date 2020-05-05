@@ -1,5 +1,7 @@
 # NodeJS NBA Winamax score calculator
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c0c30ef96974fee813f5650eed86133)](https://app.codacy.com/manual/charlescoeurderoy/nodejs-nba-winamax?utm_source=github.com&utm_medium=referral&utm_content=ccoeurderoy/nodejs-nba-winamax&utm_campaign=Badge_Grade_Dashboard)
+
 A little prompt asking you to select a game and a user to calculate [Winamax](https://www.winamax.fr/jde) score.
 
 ## Getting Started
