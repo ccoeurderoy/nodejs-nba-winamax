@@ -61,7 +61,7 @@
   "dependencies": {
     "inquirer": "^7.1.0",
     "inquirer-datepicker-prompt": "^0.4.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.26.0",
     "nba": "^4.13.0",
     "pino": "^6.3.2",
