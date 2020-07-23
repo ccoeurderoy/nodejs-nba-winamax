@@ -59,7 +59,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "inquirer": "^7.1.0",
+    "inquirer": "^7.3.3",
     "inquirer-datepicker-prompt": "^0.4.2",
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
