@@ -62,7 +62,7 @@
     "inquirer": "^7.3.3",
     "inquirer-datepicker-prompt": "^0.4.2",
     "lodash": "^4.17.20",
-    "moment": "^2.26.0",
+    "moment": "^2.29.1",
     "nba": "^4.13.0",
     "pino": "^6.7.0",
     "pino-pretty": "^4.0.0"
