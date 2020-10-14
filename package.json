@@ -44,7 +44,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@types/inquirer": "^6.5.0",
+    "@types/inquirer": "^7.3.1",
     "@types/lodash": "^4.14.162",
     "@types/pino": "^6.0.1",
     "@yelloan/tslint": "^0.3.0",
