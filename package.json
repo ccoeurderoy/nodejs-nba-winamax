@@ -50,7 +50,7 @@
     "@yelloan/tslint": "^0.3.0",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
