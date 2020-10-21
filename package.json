@@ -46,7 +46,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@types/inquirer": "^7.3.1",
     "@types/lodash": "^4.14.162",
-    "@types/pino": "^6.3.2",
+    "@types/pino": "^6.3.3",
     "@yelloan/tslint": "^0.3.0",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "^3.3.0",
